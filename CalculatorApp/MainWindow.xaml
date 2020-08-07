@@ -1,0 +1,70 @@
+﻿<Window x:Class="CalculatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorApp"
+        mc:Ignorable="d"
+        Title="Calculator" Height="320" Width="550">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" ShowGridLines="False" Height="250" Width="500">
+        
+        <!--set number and width of grid columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.125*"/>
+            <ColumnDefinition Width="0.125*"/>
+            <ColumnDefinition Width="0.125*"/>
+            <ColumnDefinition Width="0.125*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--set number of grid rows-->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <!--create small TextBlock with border-->
+        <Border BorderThickness="1" BorderBrush="DarkSlateGray" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <TextBlock Name="tBlock1" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5">0</TextBlock>
+        </Border>
+        
+        <!--create larger TextBlock with border and ScrollViewer-->
+        <Border BorderThickness="1" BorderBrush="DarkSlateGray" Grid.Row="0" Grid.Column="4" Grid.RowSpan="6">
+            <ScrollViewer>
+                <TextBlock Name="tBlock2" VerticalAlignment="Top" TextAlignment="Right" Padding="10">EMPTY</TextBlock>
+            </ScrollViewer>
+        </Border>
+        
+        <!--create each button, set position, and settings-->
+        <Button x:Name="bClr" Click="bClr_Click" ClickMode="Press" Grid.Row="1" Grid.Column="0">C</Button>
+        <Button x:Name="bPosNeg" Click="bPosNeg_Click" Grid.Row="1" Grid.Column="1">+/-</Button>
+        <Button x:Name="bPer" Click="bPer_Click" Grid.Row="1" Grid.Column="2">%</Button>
+        <Button x:Name="bDiv" Click="bDiv_Click" Grid.Row="1" Grid.Column="3">/</Button>
+        <Button x:Name="b7" Click="b7_Click" Grid.Row="2" Grid.Column="0">7</Button>
+        <Button x:Name="b8" Click="b8_Click" Grid.Row="2" Grid.Column="1">8</Button>
+        <Button x:Name="b9" Click="b9_Click" Grid.Row="2" Grid.Column="2">9</Button>
+        <Button x:Name="bMul" Click="bMul_Click" Grid.Row="2" Grid.Column="3">x</Button>
+        <Button x:Name="b4" Click="b4_Click" Grid.Row="3" Grid.Column="0">4</Button>
+        <Button x:Name="b5" Click="b5_Click" Grid.Row="3" Grid.Column="1">5</Button>
+        <Button x:Name="b6" Click="b6_Click" Grid.Row="3" Grid.Column="2">6</Button>
+        <Button x:Name="bMin" Click="bMin_Click" Grid.Row="3" Grid.Column="3">-</Button>
+        <Button x:Name="b1" Click="b1_Click" Grid.Row="4" Grid.Column="0">1</Button>
+        <Button x:Name="b2" Click="b2_Click" Grid.Row="4" Grid.Column="1">2</Button>
+        <Button x:Name="b3" Click="b3_Click" Grid.Row="4" Grid.Column="2">3</Button>
+        <Button x:Name="bAdd" Click="bAdd_Click" Grid.Row="4" Grid.Column="3">+</Button>
+        <Button x:Name="b0" Click="b0_Click" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">0</Button>
+        <Button x:Name="bDec" Click="bDec_Click" Grid.Row="5" Grid.Column="2">.</Button>
+        <Button x:Name="bEqu" Click="bEqu_Click" Grid.Row="5" Grid.Column="3">=</Button>
+        <Button x:Name="bReset" Click="bReset_Click" Grid.Row="6" Grid.Column="4">Reset</Button>
+        
+        <!--create gray TextBlock to display alerts near the bottom-->
+        <Border BorderThickness="1" BorderBrush="DarkGray" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Background="LightGray">
+            <TextBlock x:Name="alert" VerticalAlignment="Center" Padding="5" Foreground="DarkGray"></TextBlock>
+        </Border>
+    </Grid>
+</Window>
