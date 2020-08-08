@@ -15,5 +15,5 @@ This is a calculator application that was created in order to provide an alterna
 * Ability to reset the entire calculator
 
 ### Setup
-Clone this repository and open project in Visual Studio IDE or any other IDE that supports WPF App development (.NET Framework or .NET Core) in XAML and C#.
+Clone this repository and open project in Visual Studio IDE or any other IDE that supports .Net Core WPF App development.
 
