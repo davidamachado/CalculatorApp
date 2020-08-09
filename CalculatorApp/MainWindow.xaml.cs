@@ -84,8 +84,23 @@ namespace CalculatorApp
             //checks if the number length has reached the maximum allowed
             if (tBlock1.Text.Length <= MAXDIGIT)
             {
-                //process number with the percent() function found in the Calculate class
-                tBlock1.Text = Calculate.percent(tBlock1.Text);
+                //checks if absolute value of number is 0
+                if(Calculate.format(tBlock1.Text) == "0")
+                {
+                    if(tBlock1.Text.Contains('.'))
+                    {
+                        tBlock1.Text = tBlock1.Text + "00";
+                    }
+                    else
+                    {
+                        tBlock1.Text = tBlock1.Text + ".00";
+                    }
+                }
+                else
+                {
+                    //process number with the percent() function found in the Calculate class
+                    tBlock1.Text = Calculate.percent(tBlock1.Text);
+                }
             }
             else
             {
@@ -124,7 +139,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-7";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -154,7 +169,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-8";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -183,7 +198,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-9";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -223,7 +238,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-4";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -253,7 +268,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-5";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -283,7 +298,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-6";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -324,7 +339,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-1";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -354,7 +369,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-2";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -384,7 +399,7 @@ namespace CalculatorApp
             {
                 tBlock1.Text = "-3";
             }
-            else if (lastButton == "num" || lastButton == "+/-" || lastButton == "." || lastButton == "per")
+            else
             {
                 if (tBlock1.Text.Length <= MAXDIGIT)
                 {
@@ -450,13 +465,9 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "equ")
+            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "equ" || lastButton == "/")
             {
                 tBlock1.Text = "0.";
-            }
-            else if (tBlock1.Text == "-0")
-            {
-                tBlock1.Text = "-0.";
             }
             else if (tBlock1.Text.Length <= MAXDIGIT)
             {
@@ -468,6 +479,10 @@ namespace CalculatorApp
                 {
                     tBlock1.Text = tBlock1.Text + ".";
                 }
+            }
+            else
+            {
+                alert.Text = "Maximum digits reached";
             }
 
             //mark this as the last button which was clicked
@@ -593,6 +608,8 @@ namespace CalculatorApp
             }
             //set the start of the new line to be placed after the answer and after a blank line
             lineStart = lineNumber + 3;
+
+            //assign the answer to the return variable
             String answer = num1;
             return answer;
         }

@@ -7,7 +7,7 @@ namespace CalculatorApp
 {
     class Calculate
     {
-        //fuction to add both operands on each side of operator
+        //function to add both operands on each side of operator
         public static String add(String a, String b)
         {
             String answer = null;
@@ -19,7 +19,7 @@ namespace CalculatorApp
             return answer;
         }
 
-        //fuction to subtract operand (String) b from operand (String) a
+        //function to subtract operand (String) b from operand (String) a
         public static String subtract(String a, String b)
         {
             String answer = null;

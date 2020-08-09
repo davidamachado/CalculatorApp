@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorApp"
         mc:Ignorable="d"
-        Title="Calculator" Height="320" Width="550">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" ShowGridLines="False" Height="250" Width="500">
+        Title="Calculator" Height="320" Width="550" ResizeMode="NoResize">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" ShowGridLines="False" Height="250" Width="500"> 
         
         <!--set number and width of grid columns-->
         <Grid.ColumnDefinitions>
