@@ -4,6 +4,8 @@ A Better Calculator
 ### Version
 1.0
 
+![CalculatorImage](https://github.com/davidamachado/CalculatorApp/blob/master/CalculatorApp/images/CalculatorApp.JPG?raw=true)
+
 ### Description
 This is a calculator application that was created in order to provide an alternative and more productive user experience. 
 
