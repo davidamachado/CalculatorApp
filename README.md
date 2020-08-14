@@ -2,7 +2,7 @@
 A Better Calculator
 
 ### Version
-1.0
+1.1
 
 ![CalculatorImage](https://github.com/davidamachado/CalculatorApp/blob/master/CalculatorApp/images/CalculatorApp.JPG?raw=true)
 
@@ -18,4 +18,10 @@ This is a calculator application that was created in order to provide an alterna
 
 ### Setup
 Clone this repository and open project in Visual Studio IDE or any other IDE that supports .Net Core WPF App development.
+
+### Version History
+1.1
+* prevent dividing by 0 when "%", "+/-", and "." buttons are pressed after pressing "/"
+
+* additional code enhancements for simplification
 
