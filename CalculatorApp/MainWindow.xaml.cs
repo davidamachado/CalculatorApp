@@ -42,9 +42,6 @@ namespace CalculatorApp
         {
             tBlock1.Text = "0";
             alert.Text = "Cleared";
-
-            //mark this as the last button which was clicked
-            lastButton = "C";
         }
 
         //action when "+/-" button is clicked
@@ -72,18 +69,28 @@ namespace CalculatorApp
                     tBlock1.Text = "-" + number;
                 }
             }
-            //mark this as the last button which was clicked
-            lastButton = "+/-";
         }
 
         //action when "%" button is clicked
         private void bPer_Click(object sender, RoutedEventArgs e)
         {
             alert.Text = "";
+            String number = tBlock1.Text;
 
             //checks if the number length has reached the maximum allowed
             if (tBlock1.Text.Length <= MAXDIGIT)
             {
+                if(lastButton == "op" || lastButton == "equ" || lastButton == "/")
+                {
+                    if(number[0] == '-')
+                    {
+                        tBlock1.Text = "-0";
+                    }
+                    else
+                    {
+                        tBlock1.Text = "0";
+                    }
+                }
                 //checks if absolute value of number is 0
                 if(Calculate.format(tBlock1.Text) == "0")
                 {
@@ -106,8 +113,6 @@ namespace CalculatorApp
             {
                 alert.Text = "Maximum digits reached";
             }
-            //mark this as the last button which was clicked
-            lastButton = "per";
         }
 
         //action when "/" button is clicked
@@ -131,13 +136,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "7";
-            }
-            else if (tBlock1.Text == "-0")
+            if(tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-7";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "7";
             }
             else
             {
@@ -161,13 +166,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "8";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-8";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "8";
             }
             else
             {
@@ -190,13 +195,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "9";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-9";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "9";
             }
             else
             {
@@ -230,13 +235,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked  and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "4";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-4";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "4";
             }
             else
             {
@@ -260,13 +265,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "5";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-5";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "5";
             }
             else
             {
@@ -290,13 +295,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "6";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-6";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "6";
             }
             else
             {
@@ -331,13 +336,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "1";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-1";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "1";
             }
             else
             {
@@ -361,13 +366,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "2";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-2";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "2";
             }
             else
             {
@@ -391,13 +396,13 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked and if number currently is "0"
-            if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
-            {
-                tBlock1.Text = "3";
-            }
-            else if (tBlock1.Text == "-0")
+            if (tBlock1.Text == "-0")
             {
                 tBlock1.Text = "-3";
+            }
+            else if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "/" || lastButton == "equ")
+            {
+                tBlock1.Text = "3";
             }
             else
             {
@@ -449,25 +454,32 @@ namespace CalculatorApp
                         alert.Text = "Maximum digits reached";
                     }
                 }
+                //mark this as the last button which was clicked
+                lastButton = "num";
             }
             else
             {
                 alert.Text = "Cannot divide by 0";
             }
-
-            //mark this as the last button which was clicked
-            lastButton = "num";
         }
 
         //action when "." button is clicked
         private void bDec_Click(object sender, RoutedEventArgs e)
         {
             alert.Text = "";
+            String number = tBlock1.Text;
 
             //checks for the last button clicked and if number currently is "0"
             if (tBlock1.Text == "0" || lastButton == "op" || lastButton == "equ" || lastButton == "/")
             {
-                tBlock1.Text = "0.";
+                if (number[0] == '-')
+                {
+                    tBlock1.Text = "-0.";
+                }
+                else
+                {
+                    tBlock1.Text = "0.";
+                }
             }
             else if (tBlock1.Text.Length <= MAXDIGIT)
             {
@@ -484,27 +496,32 @@ namespace CalculatorApp
             {
                 alert.Text = "Maximum digits reached";
             }
-
-            //mark this as the last button which was clicked
-            lastButton = ".";
         }
 
         //action when "=" button is clicked
         private void bEqu_Click(object sender, RoutedEventArgs e)
         {
-            alert.Text = "";
-            tBlock1.Text = Calculate.format(tBlock1.Text);
-            tBlock2.Text = append() + " =";
-            String answer = Calculate.format(calculate());
+            alert.Text = lastButton;
 
-            //place the answer to the math expression on a new line
-            tBlock2.Text = tBlock2.Text + Environment.NewLine + answer + Environment.NewLine;
+            if(lastButton == "/" && Calculate.format(tBlock1.Text) == "0")
+            {
+                alert.Text = "Cannot divide by 0";
+            }
+            else
+            {
+                tBlock1.Text = Calculate.format(tBlock1.Text);
+                tBlock2.Text = append() + " =";
+                String answer = Calculate.format(calculate());
 
-            //place the answer to the math expression in the small textBlock
-            tBlock1.Text = answer;
+                //place the answer to the math expression on a new line
+                tBlock2.Text = tBlock2.Text + Environment.NewLine + answer + Environment.NewLine;
 
-            //mark this as the last button which was clicked
-            lastButton = "equ";
+                //place the answer to the math expression in the small textBlock
+                tBlock1.Text = answer;
+
+                //mark this as the last button which was clicked
+                lastButton = "equ";
+            }
         }
 
         //action when "Reset" button is clicked
