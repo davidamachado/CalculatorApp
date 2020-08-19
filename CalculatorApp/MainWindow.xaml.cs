@@ -437,29 +437,47 @@ namespace CalculatorApp
             alert.Text = "";
 
             //checks for the last button clicked
-            if (lastButton != "/")
+            if (lastButton == "/" && !tBlock1.Text.Contains('.'))
             {
-                if (lastButton == "op" || lastButton == "equ")
-                {
-                    tBlock1.Text = "0";
-                }
-                if (tBlock1.Text != "0" && tBlock1.Text != "-0")
-                {
-                    if (tBlock1.Text.Length <= MAXDIGIT)
-                    {
-                        tBlock1.Text = tBlock1.Text + "0";
-                    }
-                    else
-                    {
-                        alert.Text = "Maximum digits reached";
-                    }
-                }
-                //mark this as the last button which was clicked
-                lastButton = "num";
+                alert.Text = "Cannot divide by 0";
             }
             else
             {
-                alert.Text = "Cannot divide by 0";
+                if (lastButton == "op" || lastButton == "equ")
+                {
+                    if (tBlock1.Text.Contains('.'))
+                    {
+                        tBlock1.Text = tBlock1.Text + "0";
+                    }
+                    else if (tBlock1.Text == "-0")
+                    {
+                        tBlock1.Text = "-0";
+                    }
+                    else
+                    {
+                        tBlock1.Text = "0";
+                    }
+                }
+                else if (Calculate.format(tBlock1.Text) == "0")
+                {
+                    if (tBlock1.Text.Contains('.'))
+                    {
+                        if (tBlock1.Text.Length <= MAXDIGIT)
+                        {
+                            tBlock1.Text = tBlock1.Text + "0";
+                        }
+                        else
+                        {
+                            alert.Text = "Maximum digits reached";
+                        }
+                    }
+                }
+                else
+                {
+                    tBlock1.Text = tBlock1.Text + "0";
+                }
+                //mark this as the last button which was clicked
+                lastButton = "num";
             }
         }
 
