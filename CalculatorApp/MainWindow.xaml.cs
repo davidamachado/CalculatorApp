@@ -2,6 +2,7 @@
  * Author: David Machado
  * Created: 2020-05-01
  * Updates:
+ * 1.1 - updated functionality to avoid dividing by 0
 */
 
 using System;
